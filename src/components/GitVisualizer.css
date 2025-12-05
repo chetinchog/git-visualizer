@@ -1,0 +1,80 @@
+.visualizer-container {
+    flex: 1;
+    width: 75%;
+    height: 100%;
+    position: relative;
+    overflow: auto;
+    background: radial-gradient(circle at center, #1a1a20 0%, #121214 100%);
+    display: flex;
+    justify-content: center;
+    padding: 40px;
+}
+
+.graph-area {
+    position: relative;
+    min-width: 100%;
+    min-height: 100%;
+}
+
+.note {
+    position: absolute;
+    width: 140px;
+    background-color: var(--note-bg);
+    border: 1px solid var(--note-border);
+    padding: 12px;
+    border-radius: 4px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--text-primary);
+    transform-origin: top center;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    z-index: 5;
+    cursor: pointer;
+}
+
+.note:hover {
+    transform: scale(1.05) rotate(0deg) !important;
+    z-index: 10;
+}
+
+.note.active {
+    box-shadow: 0 0 25px var(--commit-color, var(--accent-red)), 0 0 0 2px var(--commit-color, var(--accent-red));
+}
+
+.note-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    color: var(--text-secondary);
+    font-size: 10px;
+}
+
+.note-msg {
+    font-weight: 500;
+    line-height: 1.4;
+}
+
+.pin {
+    width: 14px;
+    height: 14px;
+    background: radial-gradient(circle at 30% 30%, #ffffff, #999);
+    border-radius: 50%;
+    position: absolute;
+    top: -7px;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    z-index: 6;
+}
+
+.thread-label {
+    fill: var(--text-primary);
+    font-size: 12px;
+    font-family: var(--font-mono);
+    font-weight: bold;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 0.5);
+    padding: 2px 6px;
+    border-radius: 4px;
+}
